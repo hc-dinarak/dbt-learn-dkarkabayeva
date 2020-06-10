@@ -4,4 +4,5 @@
         paymentmethod as payment_method,
         round(amount /100, 2) as amount,
         created as created_date
-    from raw.stripe.payment where status = 'success'
+    from {{ source('stripe', 'payment') }}
+    where status = 'success'

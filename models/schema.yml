@@ -29,10 +29,12 @@ models:
         tests:
           - unique
           - not_null
+
       - name: status
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+
       - name: customer_id
         tests:
           - not_null
@@ -49,6 +51,7 @@ models:
           - not_null
 
       - name: status
+        description: Current order status      
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'returned', 'return_pending']  

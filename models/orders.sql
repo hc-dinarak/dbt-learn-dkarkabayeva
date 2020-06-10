@@ -3,7 +3,7 @@ with order_payments as (
         order_id, 
         sum(amount) as amount
 
-from {{ ref('stg_payments') }}       
+from {{ ref('stg_payments') }}
 group by 1 
 )
 
