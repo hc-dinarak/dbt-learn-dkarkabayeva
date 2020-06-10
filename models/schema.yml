@@ -39,3 +39,16 @@ models:
           - relationships:
               to: ref('stg_customers')
               field: customer_id
+
+  - name: orders
+    columns: 
+      - name: order_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['placed', 'shipped', 'completed', 'returned', 'return_pending']  
